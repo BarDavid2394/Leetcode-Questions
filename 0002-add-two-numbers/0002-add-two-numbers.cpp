@@ -17,7 +17,7 @@ public:
             return l2;
         if(l2 == NULL)
             return l1;
-        int carry = 0;
+        bool carry = 0;
         int node_sum = 0;
         while(l1 && l2){
             node_sum = l1->val + l2->val + carry;
