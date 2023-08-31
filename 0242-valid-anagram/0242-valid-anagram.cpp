@@ -1,15 +1,15 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        int hist_s[123] = {0};
-        int hist_t[123] = {0};
+        int hist_s[26] = {0};
+        int hist_t[26] = {0};
         for(int i = 0;i<s.length();i++){
-            hist_s[s[i]]++;
+            hist_s[s[i]-'a']++;
         }
         for(int j = 0;j<t.length();j++){
-            hist_t[t[j]]++;
+            hist_t[t[j]-'a']++;
         }
-        for(int k=0;k<123;k++){
+        for(int k=0;k<26;k++){
             if(hist_t[k] != hist_s[k]){
                 return false;
             }
