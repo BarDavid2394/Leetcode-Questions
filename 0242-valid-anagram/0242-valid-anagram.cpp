@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
+        if (s.length() != t.length()) return false;
         int hist_s[26] = {0};
         int hist_t[26] = {0};
         for(int i = 0;i<s.length();i++){
