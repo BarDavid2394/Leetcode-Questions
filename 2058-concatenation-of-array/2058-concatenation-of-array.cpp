@@ -1,15 +1,12 @@
 class Solution {
 public:
     vector<int> getConcatenation(vector<int>& nums) {
-        vector<int> ans;
-        int count=0;
-        while(count < 2){
-            for(int i=0;i<nums.size();i++){
-              ans.push_back(nums[i]);
+        int n = nums.size();
+        //original was for(inti=0;... i<nums.size()). problem is its always increasing and its time limit exceed (Size is bigger each etarion)
+        for(int i=0;i<n;i++){
+        nums.push_back(nums[i]);
         }
-            count++;
-        }   
-        return ans;
+        return nums;
     }
 };
 //naive solution - run on the vector twice and push back.
