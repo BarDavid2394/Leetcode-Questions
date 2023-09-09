@@ -23,3 +23,18 @@ public:
     return head;
     }
 };
+
+//other option - run on the linked list with fast and slow when fast does 2 steps each time. 
+// ListNode* middleNode(ListNode* head) 
+//     {
+//         if(head == NULL)
+//             return head;
+//         ListNode* slow = head;
+//         ListNode* fast = head;
+//         while(fast != NULL && fast -> next != NULL)
+//         {
+//             slow = slow -> next;
+//             fast = fast -> next -> next;
+//         }
+//         return slow;
+// 	}
