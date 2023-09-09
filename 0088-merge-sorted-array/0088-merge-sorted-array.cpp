@@ -17,14 +17,10 @@ public:
           }
       }
     while(j>=0){
-        nums1[real_size1] = nums1[j];
-        real_size1--;
-        j--;
+        nums1[real_size1--] = nums1[j--];
     } 
     while(i>=0){
-        nums1[real_size1] = nums2[i];
-        real_size1--;
-        i--;
+        nums1[real_size1--] = nums2[i--];
     }   
     }
 };
