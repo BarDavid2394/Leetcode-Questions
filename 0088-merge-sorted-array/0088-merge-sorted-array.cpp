@@ -5,22 +5,14 @@ public:
       int j = m-1;
       int real_size1 =(m+n)-1;
       while(i>=0 && j>=0){
-          if(nums1[j] > nums2[i]){
-              nums1[real_size1] = nums1[j];
-              j--;
-              real_size1--;
-          }
-            else{
-              nums1[real_size1] = nums2[i];
-              i--;
-              real_size1--;
-          }
+          if(nums1[j] > nums2[i])\
+            nums1[real_size1--] = nums1[j--];
+            else
+              nums1[real_size1--] = nums2[i--];
       }
-    while(j>=0){
-        nums1[real_size1--] = nums1[j--];
-    } 
-    while(i>=0){
-        nums1[real_size1--] = nums2[i--];
-    }   
+    while(j>=0)
+        nums1[real_size1--] = nums1[j--]; 
+    while(i>=0)
+        nums1[real_size1--] = nums2[i--];   
     }
 };
