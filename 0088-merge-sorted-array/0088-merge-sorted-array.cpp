@@ -10,13 +10,11 @@ public:
               j--;
               real_size1--;
           }
-        //   if(nums1[j] <= nums2[i]){
             else{
               nums1[real_size1] = nums2[i];
               i--;
               real_size1--;
           }
-
       }
     while(j>=0){
         nums1[real_size1] = nums1[j];
@@ -27,7 +25,6 @@ public:
         nums1[real_size1] = nums2[i];
         real_size1--;
         i--;
-    } 
-      
+    }   
     }
 };
