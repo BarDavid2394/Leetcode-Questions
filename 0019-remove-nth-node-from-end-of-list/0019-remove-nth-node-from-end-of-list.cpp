@@ -10,33 +10,59 @@
  */
 class Solution {
 public:
-    int List_Len(ListNode* head){
-        ListNode* dummy = head;
-        int len = 0;
-        while(dummy){
-            len++;
-            dummy = dummy->next;
-        }
-        return len;
+//     int List_Len(ListNode* head){
+//         ListNode* dummy = head;
+//         int len = 0;
+//         while(dummy){
+//             len++;
+//             dummy = dummy->next;
+//         }
+//         return len;
+//     }
+//     ListNode* removeNthFromEnd(ListNode* head, int n) {
+//         int len = List_Len(head);
+//         if(len == n){
+//             head = head->next;
+//             return head;
+//         }
+//         ListNode* p = head;
+//         int stop = len-n;
+//         int counter = 0;
+//         while(p){     
+//             if(counter == stop-1){
+//                 p->next = p->next->next;
+//                 break;    
+//             }
+//            p = p->next;
+//             counter++;
+//         }
+//         return head;
+//     }
+// };
+ListNode *removeNthFromEnd(ListNode *head, int n) 
+{
+    if (!head)
+        return nullptr;
+
+    ListNode new_head(-1);
+    new_head.next = head;
+
+    ListNode *slow = &new_head, *fast = &new_head;
+
+    for (int i = 0; i < n; i++)
+        fast = fast->next;
+
+    while (fast->next) 
+    {
+        fast = fast->next;
+        slow = slow->next;
     }
-    ListNode* removeNthFromEnd(ListNode* head, int n) {
-        int len = List_Len(head);
-        if(len == n){
-            head = head->next;
-            return head;
-        }
-        ListNode* p = head;
-        int stop = len-n;
-        int counter = 0;
-        while(p){
-            
-            if(counter == stop-1){
-                p->next = p->next->next;
-                break;    
-            }
-           p = p->next;
-            counter++;
-        }
-        return head;
-    }
+
+    ListNode *to_de_deleted = slow->next;
+    slow->next = slow->next->next;
+    
+    // delete to_be_deleted;
+
+    return new_head.next;
+}
 };
