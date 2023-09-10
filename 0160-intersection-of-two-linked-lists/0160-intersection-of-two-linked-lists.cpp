@@ -9,7 +9,6 @@
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-       ListNode *res = 0;
        ListNode *A = headA;
        ListNode *B = headB;
        unordered_map <ListNode*, int > mapA;
@@ -18,14 +17,11 @@ public:
            A = A->next;
        }
        while(B){
-           if(mapA.count(B)){
-               res = B;
-            //    cout <<"Intersected at " << res->val;
-               return res;
+           if(mapA.count(B)){       
+               return B;
            }
            B = B->next;  
        }
-        // cout <<"No Intersection ";
-        return res;
+        return 0;
     }
 };
