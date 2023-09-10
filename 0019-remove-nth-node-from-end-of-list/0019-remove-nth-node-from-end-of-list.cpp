@@ -10,7 +10,7 @@
  */
 // class Solution {
 // public:
-//     int List_Len(ListNode* head){
+//     int List_Len(ListNode* head){   better for memory!
 //         ListNode* dummy = head;
 //         int len = 0;
 //         while(dummy){
@@ -55,3 +55,4 @@ public:
         return head;
     }
 };
+//better for runtime
