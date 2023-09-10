@@ -20,12 +20,12 @@ public:
        while(B){
            if(mapA.count(B)){
                res = B;
-               cout <<"Intersected at " << res->val;
+            //    cout <<"Intersected at " << res->val;
                return res;
            }
            B = B->next;  
        }
-        cout <<"No Intersection ";
+        // cout <<"No Intersection ";
         return res;
     }
 };
