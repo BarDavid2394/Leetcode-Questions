@@ -6,9 +6,10 @@ public:
     while(!nums.empty()){
         int temp = nums.back();
         nums.pop_back();
-        if(numbers.find(temp) != numbers.end()){ // if the elemtns exists, return true.
+        if(numbers.count(temp))
+        // if(numbers.find(temp) != numbers.end()){ // if the elemtns exists, return true.
             return true;
-        }
+        // }
         numbers[temp] = temp;
     }
     return false;
@@ -16,3 +17,4 @@ public:
         
     }
 };
+//O(n) time, O(n) space.
