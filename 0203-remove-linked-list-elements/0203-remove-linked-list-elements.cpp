@@ -14,6 +14,7 @@ public:
         while(head && head->val == val){
             head = head->next;
         }
+
        ListNode* p = head;
        while( p && p->next){
            if(p->next->val == val)
